@@ -1,1 +1,1 @@
-# hotel-management-system
+models# hotel-management-system
