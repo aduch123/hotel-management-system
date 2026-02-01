@@ -1,0 +1,3 @@
+manager,admin123,MANAGER
+accountant,finance123,ACCOUNTANT
+reception,pass123,RECEPTIONIST

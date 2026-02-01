@@ -1,0 +1,134 @@
+/* Status indicator styles */
+.status-indicator {
+    -fx-background-radius: 5;
+    -fx-pref-width: 10;
+    -fx-pref-height: 10;
+    -fx-margin: 0 5 0 0;
+}
+
+/* Status colors for indicators */
+.status-PENDING {
+    -fx-background-color: #f39c12; /* Orange */
+}
+
+.status-CONFIRMED {
+    -fx-background-color: #3498db; /* Blue */
+}
+
+.status-CHECKED_IN {
+    -fx-background-color: #9b59b6; /* Purple */
+}
+
+.status-CHECKED_OUT {
+    -fx-background-color: #2ecc71; /* Green */
+}
+
+.status-CANCELLED {
+    -fx-background-color: #e74c3c; /* Red */
+}
+
+/* Table row colors based on status - Use style class approach */
+.table-row-cell.pending-row {
+    -fx-background-color: #fff9e6;
+}
+
+.table-row-cell.confirmed-row {
+    -fx-background-color: #e6f2ff;
+}
+
+.table-row-cell.checked_in-row {
+    -fx-background-color: #f2e6ff;
+}
+
+.table-row-cell.checked_out-row {
+    -fx-background-color: #e6ffe6;
+}
+
+.table-row-cell.cancelled-row {
+    -fx-background-color: #ffe6e6;
+}
+
+/* Hover effects for table rows */
+.table-row-cell:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+.table-row-cell.pending-row:hover {
+    -fx-background-color: #fef5e7;
+}
+
+.table-row-cell.confirmed-row:hover {
+    -fx-background-color: #ebf5fb;
+}
+
+.table-row-cell.checked_in-row:hover {
+    -fx-background-color: #f5eef8;
+}
+
+.table-row-cell.checked_out-row:hover {
+    -fx-background-color: #eafaf1;
+}
+
+.table-row-cell.cancelled-row:hover {
+    -fx-background-color: #fdedec;
+}
+
+/* Button styles */
+.button-action {
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-background-radius: 3;
+}
+
+.button-success {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.button-warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+}
+
+.button-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+/* Button hover effects */
+.button-success:hover {
+    -fx-background-color: #27ae60;
+}
+
+.button-warning:hover {
+    -fx-background-color: #d68910;
+}
+
+.button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Disabled buttons */
+.button-action:disabled {
+    -fx-opacity: 0.6;
+}
+
+/* Table styles */
+.table-view {
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Text field and combo box styling */
+.text-field, .combo-box, .date-picker {
+    -fx-background-radius: 3;
+}
+
+/* Status label */
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666;
+}

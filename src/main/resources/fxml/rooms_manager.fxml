@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotel.controllers.ManagerRoomController">
+
+    <top>
+        <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 15;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Text text="Hotel Management System" fill="white" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+                <Label text="ROOM MANAGEMENT" style="-fx-text-fill: white; -fx-font-size: 16px;" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Search:" style="-fx-text-fill: white;" />
+                <TextField fx:id="searchField" promptText="Room number or type"
+                           style="-fx-pref-width: 200;" />
+
+                <Label text="Type:" style="-fx-text-fill: white; -fx-padding: 0 5 0 20;" />
+                <ComboBox fx:id="typeFilter" style="-fx-pref-width: 120;" />
+
+                <Button text="Refresh" fx:id="refreshButton"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 5 15;" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button text="Add Room" fx:id="addRoomButton"
+                        style="-fx-background-color: #2ecc71; -fx-text-fill: white;" />
+                <Button text="Edit Room" fx:id="editRoomButton"
+                        style="-fx-background-color: #f39c12; -fx-text-fill: white;" />
+                <Button text="Delete Room" fx:id="deleteRoomButton"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white;" />
+                <Button text="Back" fx:id="backButton"
+                        style="-fx-background-color: #95a5a6; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <TableView fx:id="roomsTable" style="-fx-pref-height: 400;">
+                <columns>
+                    <TableColumn text="Room Number" fx:id="roomNumberColumn" prefWidth="100" />
+                    <TableColumn text="Type" fx:id="typeColumn" prefWidth="100" />
+                    <TableColumn text="Price ($)" fx:id="priceColumn" prefWidth="100" />
+                    <TableColumn text="Available" fx:id="availableColumn" prefWidth="80" />
+                    <TableColumn text="Capacity" fx:id="capacityColumn" prefWidth="80" />
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+
+            <Label fx:id="statusLabel" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #ecf0f1; -fx-padding: 10;">
+            <Label text="Double-click a room to view details | Right-click for more options"
+                   style="-fx-text-fill: #7f8c8d;" />
+        </HBox>
+    </bottom>
+</BorderPane>

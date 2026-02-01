@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<!--        fx:controller="com.hotel.controllers.LoginController"-->
+<StackPane xmlns="http://javafx.com/javafx/11"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotel.controllers.addRoomController"
+           style="-fx-background-color: #34495e;"
+           stylesheets="@../styles/login.css">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+    <!-- Card -->
+    <VBox spacing="20"
+          alignment="CENTER"
+          maxWidth="380"
+
+          style="-fx-background-color: white;
+                 -fx-background-radius: 22;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 20, 0.3, 0, 4);">
+
+        <padding>
+            <Insets top="35" right="30" bottom="35" left="30"/>
+        </padding>
+
+        <!-- Title -->
+        <Text text="Add New Room"
+              style="-fx-font-size: 24px;
+                     -fx-font-weight: bold;"/>
+
+        <!-- Form -->
+        <VBox spacing="14" prefWidth="300">
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Room Number: " style="-fx-font-size: 15; -fx-font-weight: bold;"/>
+                <TextField fx:id="roomNumberField"
+                           promptText="Room Number"
+                           style="-fx-background-radius: 14;
+                              -fx-pref-height: 44;
+                              -fx-background-color: #f1f3f5;
+                              -fx-border-color: transparent;
+                              -fx-font-size: 13px;"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Room Type: " style="-fx-font-size: 15; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="typeComboBox"
+                          promptText="Room Type"
+                          style="-fx-background-radius: 14;
+                              -fx-pref-height: 44;
+                              -fx-background-color: #f1f3f5;
+                              -fx-border-color: transparent;
+                              -fx-font-size: 13px;"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Price: " style="-fx-font-size: 15; -fx-font-weight: bold;"/>
+                <TextField fx:id="priceField"
+                           promptText="Room Number"
+                           style="-fx-background-radius: 14;
+                              -fx-pref-height: 44;
+                              -fx-background-color: #f1f3f5;
+                              -fx-border-color: transparent;
+                              -fx-font-size: 13px;"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Capacity: " style="-fx-font-size: 15; -fx-font-weight: bold;"/>
+                <TextField fx:id="capacityField"
+                           promptText="Room Number"
+                           style="-fx-background-radius: 14;
+                              -fx-pref-height: 44;
+                              -fx-background-color: #f1f3f5;
+                              -fx-border-color: transparent;
+                              -fx-font-size: 13px;"/>
+            </HBox>
+
+        </VBox>
+
+        <!-- Buttons -->
+        <VBox spacing="12" prefWidth="300">
+
+            <Button fx:id="addRoom"
+                    text="Add Room"
+                    prefWidth="300"
+                    style="-fx-background-color: #34b27c;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 20;
+                           -fx-pref-height: 44;"/>
+
+            <Button fx:id="backButton"
+                    text="Back"
+                    prefWidth="300"
+                    style="-fx-background-color: transparent;
+                           -fx-text-fill: #888888;
+                           -fx-font-size: 12px;"/>
+        </VBox>
+
+        <!-- Message -->
+        <Label fx:id="messageLabel"
+               style="-fx-text-fill: red;
+                      -fx-font-size: 12px;"/>
+
+    </VBox>
+</StackPane>

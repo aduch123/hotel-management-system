@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.fxml.*?>
+<?import javafx.util.Callback?>
+<?import javafx.scene.shape.*?>
+<?import java.time.LocalDate?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.hotel.controllers.BookingController"
+            stylesheets="@booking.css">
+
+    <top>
+        <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 15;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Text text="Hotel Management System" fill="white" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+                <Label text="BOOKING MANAGEMENT" style="-fx-text-fill: white; -fx-font-size: 16px;" />
+            </HBox>
+
+            <!-- Search and Filter Panel -->
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="150" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="150" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="150" />
+                </columnConstraints>
+
+                <Label text="Search:" style="-fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="RIGHT"/>
+                <TextField fx:id="searchField" promptText="Customer, Room, or Booking ID"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Status:" style="-fx-text-fill: white;" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.halignment="RIGHT"/>
+                <ComboBox fx:id="statusFilter" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <Label text="From Date:" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.halignment="RIGHT"/>
+                <DatePicker fx:id="fromDatePicker" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+                <Label text="To Date:" style="-fx-text-fill: white;" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="RIGHT"/>
+                <DatePicker fx:id="toDatePicker" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+                <Button text="Refresh" fx:id="refreshButton"
+                        styleClass="button-action"
+                        GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+            </GridPane>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="New Booking" fx:id="newBookingButton"
+                        styleClass="button-action button-success" />
+                <Button text="Confirm" fx:id="confirmButton"
+                        styleClass="button-action" />
+                <Button text="Cancel" fx:id="cancelButton"
+                        styleClass="button-action button-danger" />
+                <Button text="Check-in" fx:id="checkInButton"
+                        styleClass="button-action" />
+                <Button text="Check-out" fx:id="checkOutButton"
+                        styleClass="button-action" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button text="Back to Dashboard" fx:id="backButton"
+                        styleClass="button-action" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <!-- Summary Label -->
+            <Label fx:id="summaryLabel" style="-fx-font-size: 12px; -fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-padding: 0 0 10 0;" />
+
+            <!-- Bookings Table -->
+            <TableView fx:id="bookingsTable" style="-fx-pref-height: 350;">
+                <columns>
+                    <TableColumn text="Booking ID" fx:id="bookingIdColumn" prefWidth="100" />
+                    <TableColumn text="Customer" fx:id="customerNameColumn" prefWidth="150" />
+                    <TableColumn text="Room" fx:id="roomNumberColumn" prefWidth="80" />
+                    <TableColumn text="Check-in" fx:id="checkInColumn" prefWidth="100" />
+                    <TableColumn text="Check-out" fx:id="checkOutColumn" prefWidth="100" />
+                    <TableColumn text="Guests" fx:id="guestsColumn" prefWidth="60" />
+                    <TableColumn text="Nights" fx:id="nightsColumn" prefWidth="70" />
+                    <TableColumn text="Status" fx:id="statusColumn" prefWidth="100" />
+                </columns>
+                <!-- Fixed columnResizePolicy syntax -->
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+
+            <!-- Status Label -->
+            <Label fx:id="statusLabel" style="-fx-font-size: 12px; -fx-text-fill: #666; -fx-padding: 10 0 0 0;" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #ecf0f1; -fx-padding: 10;">
+            <Label text="Select a booking to perform actions | Double-click to view details"
+                   style="-fx-text-fill: #7f8c8d;" />
+        </HBox>
+    </bottom>
+</BorderPane>

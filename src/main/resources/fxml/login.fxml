@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/11"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.hotel.controllers.LoginController"
+           style="-fx-background-color: linear-gradient(to right, #34b27c, #2d9cdb);"
+           stylesheets="@../styles/login.css">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+    <!-- Card -->
+    <VBox spacing="20"
+          alignment="CENTER"
+          maxWidth="380"
+
+          style="-fx-background-color: white;
+                 -fx-background-radius: 22;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 20, 0.3, 0, 4);">
+
+        <padding>
+            <Insets top="35" right="30" bottom="35" left="30"/>
+        </padding>
+
+        <!-- Title -->
+        <Text text="Hotel Management System"
+              style="-fx-font-size: 24px;
+                     -fx-font-weight: bold;"/>
+
+        <!-- Form -->
+        <VBox spacing="14" prefWidth="300">
+
+            <TextField fx:id="usernameField"
+                       promptText="Username"
+                       style="-fx-background-radius: 14;
+                              -fx-pref-height: 44;
+                              -fx-background-color: #f1f3f5;
+                              -fx-border-color: transparent;
+                              -fx-font-size: 13px;"/>
+
+            <PasswordField fx:id="passwordField"
+                           promptText="Password"
+                           style="-fx-background-radius: 14;
+                                  -fx-pref-height: 44;
+                                  -fx-background-color: #f1f3f5;
+                                  -fx-border-color: transparent;
+                                  -fx-font-size: 13px;"/>
+
+            <ComboBox fx:id="roleComboBox"
+                      promptText="Role"
+                      style="-fx-background-radius: 14;
+                             -fx-pref-height: 35;
+                             -fx-background-color: #f1f9f9;
+                             -fx-border-color: transparent;
+                             -fx-font-family: Montserrat;
+                             -fx-font-weight: 600;
+                             -fx-font-size: 11px;"/>
+        </VBox>
+
+        <!-- Buttons -->
+        <VBox spacing="12" prefWidth="300">
+
+            <Button fx:id="loginButton"
+                    text="Login"
+                    prefWidth="300"
+                    style="-fx-background-color: #34b27c;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 20;
+                           -fx-pref-height: 44;"/>
+
+            <Button fx:id="exitButton"
+                    text="Exit"
+                    prefWidth="300"
+                    style="-fx-background-color: transparent;
+                           -fx-text-fill: #888888;
+                           -fx-font-size: 12px;"/>
+        </VBox>
+
+        <!-- Message -->
+        <Label fx:id="messageLabel"
+               style="-fx-text-fill: red;
+                      -fx-font-size: 12px;"/>
+
+    </VBox>
+</StackPane>

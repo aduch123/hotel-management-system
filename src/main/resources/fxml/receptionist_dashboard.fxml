@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotel.controllers.ReceptionistDashboardController"
+            stylesheets="@../styles/receptionist_dashboard.css">
+    <padding>
+        <Insets top="5" right="5" bottom="5" left="5"/>
+    </padding>
+
+    <top>
+        <!-- Changed: Gradient header matching login button -->
+        <VBox spacing="10" style="-fx-background-color: linear-gradient(to right, #34b27c, #2d9cdb); -fx-padding: 15; -fx-background-radius: 20;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Text text="Hotel Management System" fill="white" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+                <Label text="RECEPTIONIST DASHBOARD" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-background-color: rgba(255,255,255,0.2); -fx-padding: 5 15; -fx-background-radius: 15;" />
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER">
+                <!-- Each button has unique color -->
+                <Button text="Rooms" fx:id="roomsButton" style="-fx-background-color: #4299e1; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 20, 0.3, 0, 4);" />
+                <Button text="Bookings" fx:id="bookingsButton" style="-fx-background-color: #9f7aea; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 20, 0.3, 0, 4);" />
+                <Button text="Check-in/out" fx:id="checkinButton" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 20, 0.3, 0, 4);" />
+
+                <Button text="Logout" fx:id="logoutButton" style="-fx-background-color: #f56565; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 20, 0.3, 0, 4);" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Text text="Welcome to Hotel Management System" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #2d3748;" />
+            <Label text="Receptionist Dashboard - All booking and room management features are available"
+                   style="-fx-font-size: 14px; -fx-text-fill: #718096;" />
+
+            <HBox spacing="30" alignment="CENTER" style="-fx-padding: 30;">
+                <!-- Card 1: Blue theme -->
+                <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #e6fffa; -fx-border-color: #bee3f8; -fx-border-radius: 15; -fx-background-radius: 15;">
+                    <Text text="📊" style="-fx-font-size: 40px;" />
+                    <Label text="Room Status" style="-fx-font-weight: bold; -fx-text-fill: #2b6cb0;" />
+                    <Label text="5 Available / 6 Total" style="-fx-text-fill: #2d3748;" />
+                </VBox>
+
+                <!-- Card 2: Purple theme -->
+                <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #e6fffa; -fx-border-color: #e9d8fd; -fx-border-radius: 15; -fx-background-radius: 15;">
+                    <Text text="📅" style="-fx-font-size: 40px;" />
+                    <Label text="Today's Bookings" style="-fx-font-weight: bold; -fx-text-fill: #6b46c1;" />
+                    <Label text="1 Active Booking" style="-fx-text-fill: #2d3748;" />
+                </VBox>
+
+                <!-- Card 3: Teal theme -->
+                <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #e6fffa; -fx-border-color: #b2f5ea; -fx-border-radius: 15; -fx-background-radius: 15;">
+                    <Text text="👥" style="-fx-font-size: 40px;" />
+                    <Label text="Check-ins Today" style="-fx-font-weight: bold; -fx-text-fill: #319795;" />
+                    <Label text="0 Guests" style="-fx-text-fill: #2d3748;" />
+                </VBox>
+            </HBox>
+
+            <Label fx:id="statusLabel" style="-fx-font-size: 12px; -fx-text-fill: #718096;" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #edf2f7; -fx-padding: 10;">
+            <Label text="Hotel Management System v1.0 | Receptionist Page" style="-fx-text-fill: #718096;" />
+        </HBox>
+    </bottom>
+</BorderPane>
